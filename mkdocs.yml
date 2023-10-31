@@ -1,0 +1,90 @@
+site_name: ntfy blog
+site_url: https://blog.ntfy.sh
+site_description: Send push notifications to your phone via PUT/POST
+site_dir: build
+docs_dir: blog
+copyright: Made with ❤️ by Philipp C. Heckel
+repo_name: binwiederhier/ntfy
+repo_url: https://github.com/binwiederhier/ntfy
+edit_uri: blob/main/blog/
+
+theme:
+  name: material
+  font: false
+  language: en
+  custom_dir: blog/_overrides
+  logo: static/img/ntfy.png
+  favicon: static/img/favicon.ico
+  include_search_page: false
+  search_index_only: true
+  palette:
+    - media: "(prefers-color-scheme: light)"  # Light mode
+      scheme: default
+      toggle:
+        icon: material/lightbulb-outline
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"  # Dark mode
+      scheme: slate
+      accent: indigo
+      toggle:
+        icon: material/lightbulb
+        name: Switch to light mode
+  features:
+    - search.suggest
+    - search.highlight
+    - search.share
+    - navigation.sections
+    - content.tabs.link
+extra:
+  homepage: /
+  social:
+    - icon: fontawesome/brands/github-alt
+      link: https://github.com/binwiederhier
+extra_javascript:
+  - static/js/extra.js
+extra_css:
+  - static/css/extra.css
+
+markdown_extensions:
+  - admonition
+  - meta
+  - toc:
+      permalink: true
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.superfences
+  - pymdownx.highlight:
+      extend_pygments_lang:
+        - name: php-inline
+          lang: php
+          options:
+            startinline: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - attr_list
+  - md_in_html
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+
+plugins:
+  - search
+  - blog:
+      blog_dir: .
+  - rss
+  - minify:
+      minify_html: true
+  - mkdocs-simple-hooks:
+      hooks:
+        on_post_build: "docs.hooks:copy_fonts"
+  - rss:
+      match_path: posts/.*
+      date_from_meta:
+        as_creation: date
+      categories:
+        - categories
+        - tags
+
+nav:
+  - index.md
+
