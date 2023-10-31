@@ -2,17 +2,16 @@ site_name: ntfy blog
 site_url: https://blog.ntfy.sh
 site_description: Send push notifications to your phone via PUT/POST
 site_dir: build
-docs_dir: blog
 copyright: Made with ❤️ by Philipp C. Heckel
 repo_name: binwiederhier/ntfy
 repo_url: https://github.com/binwiederhier/ntfy
-edit_uri: blob/main/blog/
+edit_uri: blob/main/docs/
 
 theme:
   name: material
   font: false
   language: en
-  custom_dir: blog/_overrides
+  custom_dir: docs/_overrides
   logo: static/img/ntfy.png
   favicon: static/img/favicon.ico
   include_search_page: false
@@ -71,7 +70,6 @@ plugins:
   - search
   - blog:
       blog_dir: .
-  - rss
   - minify:
       minify_html: true
   - mkdocs-simple-hooks:
