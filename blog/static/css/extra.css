@@ -33,6 +33,10 @@ figure img, figure video {
     border-radius: 7px;
 }
 
+body[data-md-color-scheme="slate"] figure img[src$='.svg'] {
+    filter: invert(.75);
+}
+
 header.md-header {
     background: linear-gradient(150deg, rgba(51, 133, 116, 1) 0%, rgba(86, 189, 168, 1) 100%);
 }
@@ -48,6 +52,26 @@ body[data-md-color-scheme="slate"] header {
 figure video {
     width: 100%;
     max-height: 450px;
+}
+
+.bubble {
+    border-radius: 50%;
+    width: 21px;
+    line-height: 21px;
+    padding: 0;
+    font-size: 0.7em;
+    display: inline-block;
+    text-align: center;
+}
+
+body[data-md-color-scheme="default"] .bubble {
+    background: #eee;
+    border: 1px solid #ccc;
+}
+
+body[data-md-color-scheme="slate"] .bubble {
+    background: #333;
+    border: 1px solid #555;
 }
 
 .remove-md-box {
