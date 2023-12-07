@@ -7,6 +7,16 @@
     --md-code-font: "Roboto Mono";
 }
 
+/*
+body[data-md-color-scheme="slate"] a {
+    color: #5b9f90;
+}
+
+body[data-md-color-scheme="slate"] a:hover, body[data-md-color-scheme="slate"] a:focus {
+    color: #84b0a8;
+}
+*/
+
 .md-header__button.md-logo :is(img, svg) {
     width: unset !important;
 }

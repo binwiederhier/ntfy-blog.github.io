@@ -12,7 +12,7 @@ theme:
   name: material
   font: false
   language: en
-  custom_dir: docs/_overrides
+  custom_dir: blog/_overrides
   logo: static/img/ntfy.png
   favicon: static/img/favicon.ico
   include_search_page: false
@@ -72,7 +72,7 @@ plugins:
       minify_html: true
   - mkdocs-simple-hooks:
       hooks:
-        on_post_build: "docs.hooks:copy_fonts"
+        on_post_build: "blog.hooks:copy_fonts"
   - rss:
       match_path: posts/.*
       date_from_meta:
